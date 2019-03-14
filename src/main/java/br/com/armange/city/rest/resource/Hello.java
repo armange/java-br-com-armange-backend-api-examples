@@ -1,4 +1,4 @@
-package br.com.armange.tree.rest.resource;
+package br.com.armange.city.rest.resource;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

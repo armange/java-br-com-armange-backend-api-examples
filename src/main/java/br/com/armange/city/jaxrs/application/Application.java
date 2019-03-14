@@ -1,11 +1,11 @@
-package br.com.armange.tree.jaxrs.application;
+package br.com.armange.city.jaxrs.application;
 
 import javax.ws.rs.ApplicationPath;
 
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
 
-import br.com.armange.tree.rest.resource.Hello;
+import br.com.armange.city.rest.resource.Hello;
 
 @ApplicationPath("/")
 public class Application extends ResourceConfig {
