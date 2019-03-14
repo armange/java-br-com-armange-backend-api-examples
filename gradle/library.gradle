@@ -1,0 +1,31 @@
+def armangeVersion = "0.0.1-SNAPSHOT"
+def jerseyVersion = "2.25.1"
+
+ext.library = [
+    
+    // The Apache Software License, Version 2.0
+    br_com_armange_backend_example_dao_api: "br.com.armange:backend-example-dao-api:$armangeVersion",
+    br_com_armange_backend_example_dao_hibernate_impl: "br.com.armange:backend-example-dao-hibernate-impl:$armangeVersion",
+    br_com_armange_backend_example_entity_api: "br.com.armange:backend-example-entity-api:$armangeVersion",
+    br_com_armange_backend_example_repository_entity_api: "br.com.armange:backend-example-repository-entity-api:$armangeVersion",
+    br_com_armange_backend_example_rest_resource_api: "br.com.armange:backend-example-rest-resource-api:$armangeVersion",
+    br_com_armange_backend_example_rest_service_api: "br.com.armange:backend-example-rest-service-api:$armangeVersion",
+    br_com_armange_backend_example_rest_service_impl: "br.com.armange:backend-example-rest-service-impl:$armangeVersion",
+    br_com_armange_backend_example_common_impl: "br.com.armange:backend-example-common-impl:$armangeVersion",
+    
+    // The Apache Software License, Version 2.0
+    com_google_guava_guava: "com.google.guava:guava:23.0",
+    
+    org_glassfish_jersey_containers_jersey_container_servlet: "org.glassfish.jersey.containers:jersey-container-servlet:$jerseyVersion",
+    org_glassfish_jersey_ext_jersey_bean_validation: "org.glassfish.jersey.ext:jersey-bean-validation:$jerseyVersion",
+    
+    /*
+     * MPL 1.1
+     * LGPL 2.1
+     * Apache License 2.0
+     */
+    org_javassist_javassist: "org.javassist:javassist:3.24.0-GA",
+    
+    // Eclipse Public License 1.0
+    junit_junit: "junit:junit:4.12"
+]

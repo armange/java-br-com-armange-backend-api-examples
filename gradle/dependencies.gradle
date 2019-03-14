@@ -1,0 +1,15 @@
+dependencies {
+    compile library.br_com_armange_backend_example_common_impl
+    compile library.br_com_armange_backend_example_dao_api
+    compile library.br_com_armange_backend_example_dao_hibernate_impl
+    compile library.br_com_armange_backend_example_entity_api
+    compile library.br_com_armange_backend_example_repository_entity_api
+    compile library.br_com_armange_backend_example_rest_resource_api
+    compile library.br_com_armange_backend_example_rest_service_api
+    compile library.br_com_armange_backend_example_rest_service_impl
+    
+    compile library.org_glassfish_jersey_containers_jersey_container_servlet
+    
+    annotationProcessor "br.com.armange:aj-boilerplate:0.0.1-SNAPSHOT"
+    compileOnly "br.com.armange:aj-boilerplate:0.0.1-SNAPSHOT"
+}

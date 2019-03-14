@@ -1,0 +1,14 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+group = 'br.com.armange.tree-api'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+apply from: "$projectDir/gradle/repositories.gradle"
+apply from: "$projectDir/gradle/library.gradle"
+apply from: "$projectDir/gradle/configurations.gradle"
+apply from: "$projectDir/gradle/dependencies.gradle"
+apply from: "$projectDir/gradle/jar.gradle"
+apply from: "$projectDir/gradle/publishing.gradle"
