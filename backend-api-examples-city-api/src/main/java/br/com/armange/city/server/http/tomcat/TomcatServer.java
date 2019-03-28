@@ -76,8 +76,8 @@ public class TomcatServer {
     private void configureServerContext() {
         context = tomcat.addWebapp(contextPath, appBase);
         
-        final StandardContext standardContext = (StandardContext)context;
-        standardContext.addApplicationListener(CdiServletContextListener.class.getName());
+//        final StandardContext standardContext = (StandardContext)context;
+//        standardContext.addApplicationListener(CdiServletContextListener.class.getName());
     }
     
     private static ServletContainer buildServletContainer() {
