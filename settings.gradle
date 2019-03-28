@@ -1,1 +1,2 @@
-rootProject.name = 'city-api'
+rootProject.name = 'backend-api-examples'
+include 'backend-api-examples-city-api'

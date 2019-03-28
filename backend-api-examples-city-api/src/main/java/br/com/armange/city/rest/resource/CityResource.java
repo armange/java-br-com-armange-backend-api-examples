@@ -11,12 +11,6 @@ public class CityResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String sayPlainTextHello() {
-      return "Hello Jersey";
-    }
-    
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public String sayPlainTextHello() {
-      return "Hello Jersey";
+      return "Hello";
     }
 }
