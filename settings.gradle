@@ -1,2 +1,3 @@
 rootProject.name = 'backend-api-examples'
-include 'backend-api-examples-city-api'
+include 'backend-api-examples-snb-api',
+        'backend-api-examples-ftc-api'

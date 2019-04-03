@@ -1,0 +1,21 @@
+dependencies {
+    compile library.br_com_armange_backend_example_common_impl
+    compile library.br_com_armange_backend_example_dao_api
+    compile library.br_com_armange_backend_example_dao_hibernate_impl
+    compile library.br_com_armange_backend_example_entity_api
+    compile library.br_com_armange_backend_example_repository_entity_api
+    compile library.br_com_armange_backend_example_rest_resource_api
+    compile library.br_com_armange_backend_example_rest_service_api
+    compile library.br_com_armange_backend_example_rest_service_impl
+    
+    compile library.br_com_armange_codeless_object_builder_core_impl
+    
+    compile library.org_glassfish_jersey_containers_jersey_container_servlet
+    compile library.org_glassfish_jersey_media_jersey_media_multipart
+    
+    compile library.com_fasterxml_jackson_core_jackson_databind
+    compile library.com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider
+    
+    //annotationProcessor "br.com.armange:aj-boilerplate:0.0.1-SNAPSHOT"
+    //compileOnly "br.com.armange:aj-boilerplate:0.0.1-SNAPSHOT"
+}
