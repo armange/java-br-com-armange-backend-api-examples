@@ -93,6 +93,10 @@ ext.library = [
     // MPL 2.0 or EPL 1.0
     com_h2database_h2: "com.h2database:h2:1.4.193",
     
+    //The MIT License
+    org_mockito_mockito_all: "org.mockito:mockito-all:1.9.5",
+    
+    
     // Apache License 2.0
     br_com_armange_codeless_codeless_reflection: "br.com.armange.codeless:codeless-reflection:$armangeVersion",
     br_com_armange_codeless_codeless_core: "br.com.armange.codeless:codeless-core:$armangeVersion" 

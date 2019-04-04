@@ -3,9 +3,7 @@ package br.com.armange.backend.api.ftc.server.http.tomcat;
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.LifecycleState;
-import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
-import org.apache.deltaspike.cdise.servlet.CdiServletContextListener;
 import org.apache.deltaspike.core.api.config.ConfigResolver;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -75,9 +73,6 @@ public class TomcatServer {
 
     private void configureServerContext() {
         context = tomcat.addWebapp(contextPath, appBase);
-        
-//        final StandardContext standardContext = (StandardContext)context;
-//        standardContext.addApplicationListener(CdiServletContextListener.class.getName());
     }
     
     private static ServletContainer buildServletContainer() {

@@ -2,13 +2,12 @@ package br.com.armange.backend.api.ftc.jaxrs.application;
 
 import javax.ws.rs.ApplicationPath;
 
-import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 
-import br.com.armange.backend.api.ftc.rest.resource.CityResource;
+import br.com.armange.backend.api.ftc.rest.resource.VeicleResource;
 
 @ApplicationPath("/")
 public class Application extends ResourceConfig {
@@ -20,8 +19,7 @@ public class Application extends ResourceConfig {
     }
     
     private void loadResources() {
-        register(CityResource.class);
-        register(MultiPartFeature.class);
+        register(VeicleResource.class);
         register(JacksonJaxbJsonProvider.class);
     }
 }
