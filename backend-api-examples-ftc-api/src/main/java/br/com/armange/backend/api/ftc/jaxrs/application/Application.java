@@ -7,6 +7,7 @@ import org.glassfish.jersey.server.ServerProperties;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 
+import br.com.armange.backend.api.ftc.rest.resource.ColorResource;
 import br.com.armange.backend.api.ftc.rest.resource.VeicleResource;
 
 @ApplicationPath("/")
@@ -20,6 +21,7 @@ public class Application extends ResourceConfig {
     
     private void loadResources() {
         register(VeicleResource.class);
+        register(ColorResource.class);
         register(JacksonJaxbJsonProvider.class);
     }
 }
