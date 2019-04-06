@@ -37,9 +37,9 @@ public class ColorServiceUnitTest {
     
     @Test
     public void serviceMustBeAbleToDelete() {
-        spiedColorService.delete(color);
+        spiedColorService.delete(color.getId());
         
-        Mockito.verify(spiedColorService).delete(color);
+        Mockito.verify(spiedColorService).delete(color.getId());
     }
     
     @Test

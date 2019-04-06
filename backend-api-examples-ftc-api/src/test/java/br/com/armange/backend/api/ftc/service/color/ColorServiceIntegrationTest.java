@@ -9,8 +9,6 @@ import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import br.com.armange.backend.api.ftc.entity.Color;
 import br.com.armange.backend.api.ftc.rest.service.ColorService;
 import br.com.armange.dao.CountedPage;
@@ -22,7 +20,6 @@ public class ColorServiceIntegrationTest {
     private static final String ID = "id";
     
     private final ColorService spiedColorService = new ColorService();
-    final ObjectMapper objectMapper = new ObjectMapper(); 
     private final Color color = new Color();
     
     public ColorServiceIntegrationTest() {
@@ -82,7 +79,7 @@ public class ColorServiceIntegrationTest {
         Assertions.assertThat(color).isNotNull();
         Assert.assertThat(color, Matchers.hasProperty(ID, Matchers.notNullValue()));
         
-        spiedColorService.delete(color);
+        spiedColorService.delete(color.getId());
         
         response = spiedColorService.findOne(color.getId());
         Assertions.assertThat(response.getEntity()).isNull();

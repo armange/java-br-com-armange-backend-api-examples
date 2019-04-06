@@ -1,4 +1,4 @@
-package br.com.armange.backend.api.ftc.service;
+package br.com.armange.backend.api.ftc.service.veicle;
 
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -37,9 +37,9 @@ public class VeicleServiceUnitTest {
     
     @Test
     public void serviceMustBeAbleToDelete() {
-        spiedVeicleService.delete(veicle);
+        spiedVeicleService.delete(veicle.getId());
         
-        Mockito.verify(spiedVeicleService).delete(veicle);
+        Mockito.verify(spiedVeicleService).delete(veicle.getId());
     }
     
     @Test

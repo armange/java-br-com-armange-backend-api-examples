@@ -75,6 +75,8 @@ ext.library = [
     // Apache License 2.0
     com_fasterxml_jackson_core_jackson_databind: "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
     com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider: "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:$jacksonVersion",
+    com_fasterxml_jackson_jaxrs_jackson_jaxrs_base: "com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:$jacksonVersion",
+    com_fasterxml_jackson_core_jackson_annotations: "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion",
     
     // GNU Lesser General Public License 2.1
     org_hibernate_hibernate_core: "org.hibernate:hibernate-core:5.4.1.Final",
@@ -93,9 +95,13 @@ ext.library = [
     // MPL 2.0 or EPL 1.0
     com_h2database_h2: "com.h2database:h2:1.4.193",
     
-    //The MIT License
+    // The MIT License
     org_mockito_mockito_all: "org.mockito:mockito-all:1.9.5",
     
+    // CDDL+GPL License
+    org_glassfish_jersey_test_framework_jersey_test_framework_core: "org.glassfish.jersey.test-framework:jersey-test-framework-core:$jerseyVersion",
+    org_glassfish_jersey_test_framework_providers_jersey_test_framework_provider_grizzly2: "org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:$jerseyVersion",
+    org_glassfish_jersey_media_jersey_media_json_jackson: "org.glassfish.jersey.media:jersey-media-json-jackson:$jerseyVersion",
     
     // Apache License 2.0
     br_com_armange_codeless_codeless_reflection: "br.com.armange.codeless:codeless-reflection:$armangeVersion",
