@@ -16,12 +16,13 @@ import org.apache.commons.io.FileUtils;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
+import br.com.armange.backend.api.upf.rest.service.FileDiffService;
+import br.com.armange.backend.api.upf.rest.service.FileSystemService;
+
 @Path("/diff")
 public class FileDiffResource extends AbstractFileResource {
     private static final String INPUT_KEY = "text-file";
     private static final String ID_PARAM_PATH = "ID";
-    private static final String FROM_FILE_PREFIX = "from-";
-    private static final String TO_FILE_PREFIX = "to-";
 
     @POST
     @Path("/{id}/from")
@@ -32,7 +33,9 @@ public class FileDiffResource extends AbstractFileResource {
         @FormDataParam(INPUT_KEY) final FormDataContentDisposition fileDetail,
         @PathParam(ID_PARAM_PATH) final String id) {
         try {
-            FileUtils.copyInputStreamToFile(uploadedInputStream, buildDestination(id, FROM_FILE_PREFIX, fileDetail));
+            FileUtils.copyInputStreamToFile(
+                    uploadedInputStream, 
+                    buildDestination(id, FileSystemService.FILE_ON_LEFT_NAME));
             
             return Response.status(Status.CREATED).build();
         } catch (final IOException e) {
@@ -51,10 +54,31 @@ public class FileDiffResource extends AbstractFileResource {
         @FormDataParam(INPUT_KEY) final FormDataContentDisposition fileDetail,
         @PathParam(ID_PARAM_PATH) final String id) {
         try {
-            FileUtils.copyInputStreamToFile(uploadedInputStream, buildDestination(id, TO_FILE_PREFIX, fileDetail));
+            FileUtils.copyInputStreamToFile(
+                    uploadedInputStream, 
+                    buildDestination(id, FileSystemService.FILE_ON_RIGHT_NAME));
             
             return Response.status(Status.CREATED).build();
         } catch (final IOException e) {
+            e.printStackTrace();
+            
+            return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+    
+    @POST
+    @Path("/{id}/diff")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response diffFile(@PathParam(ID_PARAM_PATH) final String id) {
+        try {
+            return Response
+                    .status(Status.OK)
+                    .entity(FileDiffService
+                            .fromId(id)
+                            .readFilesAndGetDiff())
+                    .build();
+        } catch (final Exception e) {
             e.printStackTrace();
             
             return Response.status(Status.INTERNAL_SERVER_ERROR).build();
