@@ -1,4 +1,4 @@
-package br.com.armange.backend.api.ftc.server.configuration;
+package br.com.armange.backend.api.upf.server.configuration;
 
 public class PropertyKeyHandler {
 	

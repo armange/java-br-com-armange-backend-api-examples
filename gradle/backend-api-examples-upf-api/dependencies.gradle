@@ -7,11 +7,16 @@ dependencies {
     compile library.br_com_armange_backend_example_rest_service_api
     
     compile library.org_glassfish_jersey_containers_jersey_container_servlet
+    compile library.org_glassfish_jersey_media_jersey_media_multipart
     
     compile library.com_fasterxml_jackson_core_jackson_databind
     compile library.com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider
     
     compile library.com_h2database_h2
+    
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+    
     
     testCompile library.junit_junit
     testCompile library.org_mockito_mockito_all

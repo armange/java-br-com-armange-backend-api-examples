@@ -1,4 +1,4 @@
-package br.com.armange.backend.api.ftc.server.http.tomcat;
+package br.com.armange.backend.api.upf.server.http.tomcat;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
@@ -6,6 +6,7 @@ import org.apache.catalina.LifecycleState;
 import org.apache.catalina.deploy.FilterDef;
 import org.apache.catalina.deploy.FilterMap;
 import org.apache.catalina.startup.Tomcat;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.deltaspike.core.api.config.ConfigResolver;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -13,9 +14,9 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.Configurator;
 import org.glassfish.jersey.servlet.ServletContainer;
 
-import br.com.armange.backend.api.ftc.jaxrs.application.Application;
-import br.com.armange.backend.api.ftc.server.configuration.PropertyKeyHandler;
-import br.com.armange.backend.api.ftc.server.configuration.ServerProperties;
+import br.com.armange.backend.api.upf.jaxrs.application.Application;
+import br.com.armange.backend.api.upf.server.configuration.PropertyKeyHandler;
+import br.com.armange.backend.api.upf.server.configuration.ServerProperties;
 
 public class TomcatServer {
     
@@ -70,7 +71,14 @@ public class TomcatServer {
     private void addServletsToTomcatServer() {
         
         Tomcat.addServlet(context, SERVLET_NAME, buildServletContainer());
-        context.addServletMapping("/*", SERVLET_NAME);
+        context.addServletMapping(StringUtils.join("/", getApiVersion(), "*"), SERVLET_NAME);
+    }
+    
+    private String getApiVersion() {
+        return ConfigResolver
+            .resolve(PropertyKeyHandler.build(ServerProperties.API_VERSION))
+            .as(String.class)
+            .getValue();
     }
 
     private void configureServerContext() {
@@ -104,7 +112,7 @@ public class TomcatServer {
         final Thread tomcatThread = new Thread(() -> {
             try {
                 tomcat.start();
-                tomcat.getServer().await();    
+                tomcat.getServer().await();
             } catch (final LifecycleException e) {
                 e.printStackTrace();
             }
