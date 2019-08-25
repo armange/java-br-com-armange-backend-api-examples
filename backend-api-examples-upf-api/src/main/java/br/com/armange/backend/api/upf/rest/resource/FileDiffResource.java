@@ -22,7 +22,7 @@ import br.com.armange.backend.api.upf.rest.service.FileSystemService;
 @Path("/diff")
 public class FileDiffResource extends AbstractFileResource {
     private static final String INPUT_KEY = "text-file";
-    private static final String ID_PARAM_PATH = "ID";
+    private static final String ID_PARAM_PATH = "id";
 
     @POST
     @Path("/{id}/from")
@@ -72,11 +72,13 @@ public class FileDiffResource extends AbstractFileResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response diffFile(@PathParam(ID_PARAM_PATH) final String id) {
         try {
+            final String diff = FileDiffService
+                    .fromId(id)
+                    .readFilesAndGetDiff();
+            
             return Response
-                    .status(Status.OK)
-                    .entity(FileDiffService
-                            .fromId(id)
-                            .readFilesAndGetDiff())
+                    .status(diff == null ? Status.NO_CONTENT : Status.OK)
+                    .entity(diff)
                     .build();
         } catch (final Exception e) {
             e.printStackTrace();

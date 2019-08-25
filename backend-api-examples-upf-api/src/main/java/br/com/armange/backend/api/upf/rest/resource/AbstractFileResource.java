@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
 
 import br.com.armange.backend.api.upf.rest.service.FileSystemService;
 
@@ -24,6 +23,6 @@ public abstract class AbstractFileResource {
             fileId.mkdir();
         }
         
-        return StringUtils.join(FileSystemService.getBaseDirectory(), id, File.pathSeparator);
+        return fileId.getIdDirectory();
     }
 }

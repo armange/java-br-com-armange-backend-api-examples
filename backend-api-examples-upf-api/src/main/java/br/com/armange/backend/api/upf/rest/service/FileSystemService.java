@@ -48,7 +48,7 @@ public class FileSystemService {
     }
     
     private String composeFileNameOn(final String fileName) {
-        return StringUtils.join(getBaseDirectory(), id, File.pathSeparator, fileName);
+        return StringUtils.join(getBaseDirectory(), id, File.separator, fileName);
     }
     
     public boolean mkdir() {
@@ -69,6 +69,10 @@ public class FileSystemService {
         }
         
         return FileUtils.getFile(baseDirectory, id).exists();
+    }
+    
+    public String getIdDirectory() {
+        return StringUtils.join(getBaseDirectory(), id, File.separator);
     }
     
     public static String getBaseDirectory() {
