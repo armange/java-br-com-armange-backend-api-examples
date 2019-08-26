@@ -7,17 +7,12 @@ dependencies {
     compile library.com_fasterxml_jackson_core_jackson_databind
     compile library.com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider
     
-    compile library.com_h2database_h2
-    
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
     compile group: 'io.github.java-diff-utils', name: 'java-diff-utils', version: '4.0'
     
     testCompile library.junit_junit
-    testCompile library.org_mockito_mockito_all
     testCompile library.org_assertj_assertj_core
-    testCompile library.org_hamcrest_hamcrest
-    testCompile library.org_hamcrest_hamcrest_library
     testCompile library.org_glassfish_jersey_test_framework_jersey_test_framework_core
     testCompile library.org_glassfish_jersey_test_framework_providers_jersey_test_framework_provider_grizzly2
     testCompile library.org_glassfish_jersey_media_jersey_media_json_jackson
