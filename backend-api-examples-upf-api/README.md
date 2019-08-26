@@ -20,7 +20,7 @@ Exemplo:
   3. __Chamadas para os endpoints__
   
 Endpoints:
-- __*{host}/{apiVersion}/{id}/from*__
+- __*POST - {host}/{apiVersion}/{id}/from*__
 Recurso para o carregamento de um primeiro arquivo(versão original do arquivo) textual para posterior comparação. __*Utilize a chave [text-file] para enviar arquivos.*__
 Exemplo:
 ```java
@@ -29,7 +29,7 @@ final FileDataBodyPart filePart = new FileDataBodyPart("text-file", file);
 Ou através do postman:
 
 [![Postman](https://github.com/armange/java-br-com-armange-backend-api-examples/blob/upflux/backend-api-examples-upf-api/src/assets/postman.png)](https://github.com/armange/java-br-com-armange-backend-api-examples/edit/upflux/README.md)
-- __*{host}/{apiVersion}/{id}/to*__
+- __*POST - {host}/{apiVersion}/{id}/to*__
 Recurso para o carregamento de um segundo arquivo(versão revisada) textual para posterior comparação.
-- __*{host}/{apiVersion}/{id}/diff*__
+- __*GET - {host}/{apiVersion}/{id}/diff*__
 Recurso para obtenção da análise comparativa dos arquivos textuais carregados. Cas linhas alteradas serão precedidas pelos sinais (+, - e =), sinalizando adição de linha, remoção de linha e linha não alterada, reespectivamente.
