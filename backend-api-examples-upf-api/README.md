@@ -1,6 +1,5 @@
 [![Upflux](https://upflux.net/wp-content/uploads/2018/04/logo-upflux-108x47-1.png)](https://upflux.net/)
 
-[![Build Status](https://github.com/armange/java-br-com-armange-backend-api-examples/tree/upflux/backend-api-examples-upf-api)]() 
 ##### Versão: 0.0.1-SNAPSHOT
 Projeto-teste para análise de codificação segundo especificações recebidas.
 
